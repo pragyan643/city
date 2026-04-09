@@ -4,39 +4,141 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Explore Sambalpur - Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
+<!-- ====== NAVBAR ====== -->
 <header>
   <nav class="navbar">
-
     <div class="nav-left">
-      <button class="menu-btn" id="menuBtn">☰</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
       <div class="logo">ଜୁହାର🙏 <span>Sambalpur</span></div>
     </div>
-
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="history.html">History</a></li>
-      <li><a href="destinations.html">Famous Destination</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
       <li><a href="culture.html">Culture</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><button id="theme-btn" class="theme-toggle">🌙 Dark Mode</button></li>
     </ul>
-
   </nav>
 </header>
 
+<!-- ====== HERO SECTION ====== -->
 <section class="hero">
-  <div class="hero-overlay">
-    <h1>The Land of Handloom & Hirakud</h1>
-    <p>Welcome to Sambalpur, where heritage meets nature.</p>
-    <a href="destinations.html" class="btn-primary">Explore Destinations</a>
+
+  <!-- Sambalpuri ikat geometric pattern (SVG tile) -->
+  <div class="hero-ikat" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs>
+        <pattern id="ikat" x="0" y="0" width="90" height="90" patternUnits="userSpaceOnUse">
+          <polygon points="45,3 87,45 45,87 3,45"
+            fill="none" stroke="rgba(215,130,25,0.25)" stroke-width="1.4"/>
+          <polygon points="45,16 74,45 45,74 16,45"
+            fill="none" stroke="rgba(170,45,0,0.22)" stroke-width="1"/>
+          <polygon points="45,29 61,45 45,61 29,45"
+            fill="none" stroke="rgba(215,130,25,0.2)" stroke-width="0.8"/>
+          <circle cx="45" cy="3"  r="2.2" fill="rgba(215,130,25,0.35)"/>
+          <circle cx="87" cy="45" r="2.2" fill="rgba(170,45,0,0.35)"/>
+          <circle cx="45" cy="87" r="2.2" fill="rgba(215,130,25,0.35)"/>
+          <circle cx="3"  cy="45" r="2.2" fill="rgba(170,45,0,0.35)"/>
+          <circle cx="45" cy="45" r="3.5" fill="rgba(215,130,25,0.28)"/>
+          <line x1="45" y1="29" x2="45" y2="61" stroke="rgba(215,130,25,0.18)" stroke-width="0.8"/>
+          <line x1="29" y1="45" x2="61" y2="45" stroke="rgba(215,130,25,0.18)" stroke-width="0.8"/>
+          <!-- corner triangles in green (third traditional colour) -->
+          <polygon points="0,0 10,0 0,10"   fill="rgba(22,75,38,0.2)"/>
+          <polygon points="90,0 80,0 90,10" fill="rgba(22,75,38,0.2)"/>
+          <polygon points="0,90 10,90 0,80" fill="rgba(22,75,38,0.2)"/>
+          <polygon points="90,90 80,90 90,80" fill="rgba(22,75,38,0.2)"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#ikat)"/>
+    </svg>
   </div>
+
+  <!-- Handloom photo background -->
+  <div class="hero-photo" aria-hidden="true"></div>
+
+  <!-- Dark gradient overlay -->
+  <div class="hero-grad" aria-hidden="true"></div>
+
+  <!-- Top woven border — Sambalpuri palette: saffron / crimson / forest-green / white -->
+  <div class="weave top" aria-hidden="true">
+    <div class="w-stripe crimson"></div>
+    <div class="w-stripe saffron"></div>
+    <div class="w-stripe white"></div>
+    <div class="w-stripe green"></div>
+    <div class="w-stripe saffron"></div>
+    <div class="w-stripe crimson"></div>
+  </div>
+
+  <!-- Main content -->
+  <div class="hero-content">
+    <!-- Odia welcome badge -->
+    <div class="hero-badge">✦ &nbsp;ସ୍ୱାଗତ · Swagat · Welcome&nbsp; ✦</div>
+
+    <h1 class="hero-h1">
+      <span class="h1-top">The Land of</span>
+      <span class="h1-accent">Sambalpuri Weaves</span>
+      <span class="h1-bottom">&amp; Sacred Heritage</span>
+    </h1>
+
+    <p class="hero-p">
+      Where threads of ikat dance in crimson and gold — discover Sambalpur,
+      a city woven from ancient temples, living traditions, and the mighty Hirakud.
+    </p>
+
+    <div class="hero-btns">
+      <a href="destinations.html" class="btn-primary">🗺&nbsp; Explore Destinations</a>
+      <a href="culture.html"      class="btn-ghost">🎨&nbsp; Our Culture</a>
+    </div>
+
+    <!-- Quick-stats -->
+    <div class="hero-stats">
+      <div class="stat">
+        <b>3000+</b><span>Years of History</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <b>55 km</b><span>Hirakud Dam</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <b>GI Tag</b><span>Sambalpuri Saree</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <b>12+</b><span>Festivals / Year</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom woven border -->
+  <div class="weave bottom" aria-hidden="true">
+    <div class="w-stripe crimson"></div>
+    <div class="w-stripe saffron"></div>
+    <div class="w-stripe white"></div>
+    <div class="w-stripe green"></div>
+    <div class="w-stripe saffron"></div>
+    <div class="w-stripe crimson"></div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint" aria-hidden="true">
+    <div class="sh-line"></div>
+    <span>Scroll</span>
+  </div>
+
 </section>
 
+<!-- ====== CONTENT CARDS ====== -->
 <section class="content-section">
   <h2 class="section-title">Welcome to Sambalpur</h2>
   <p class="section-subtitle">
@@ -46,27 +148,45 @@
   <div class="grid-container">
     <div class="card">
       <a href="history.html">
-        <img src="./assets/samaleswari.jpg" class="card-img" alt="History">
-        <h3>History</h3>
-        <p>Explore the historical background of Sambalpur and its cultural legacy.</p>
+        <img src="./assets/samaleswari.jpg" class="card-img" alt="History" loading="lazy">
+        <div class="card-body">
+          <h3>History</h3>
+          <p>Explore the historical background of Sambalpur and its cultural legacy.</p>
+          <span class="card-arrow">Learn more →</span>
+        </div>
       </a>
     </div>
-
     <div class="card">
       <a href="destinations.html">
-        <img src="./assets/hirakud.jpg" class="card-img" alt="Destinations">
-        <h3>Famous Destinations</h3>
-        <p>Discover famous tourist places like Hirakud, Huma, Debrigarh and more.</p>
+        <img src="./assets/hirakud.jpg" class="card-img" alt="Destinations" loading="lazy">
+        <div class="card-body">
+          <h3>Famous Destinations</h3>
+          <p>Discover famous tourist places like Hirakud, Huma, Debrigarh and more.</p>
+          <span class="card-arrow">Explore →</span>
+        </div>
       </a>
     </div>
-
     <div class="card">
       <a href="culture.html">
-        <img src="./assets/Nuakhai.jpg" class="card-img" alt="Culture">
-        <h3>Culture</h3>
-        <p>Learn about Nuakhai, Sital Sasthi, Sambalpuri handloom and traditions.</p>
+        <img src="./assets/Nuakhai.jpg" class="card-img" alt="Culture" loading="lazy">
+        <div class="card-body">
+          <h3>Culture</h3>
+          <p>Learn about Nuakhai, Sital Sasthi, Sambalpuri handloom and traditions.</p>
+          <span class="card-arrow">Discover →</span>
+        </div>
       </a>
     </div>
+  </div>
+</section>
+
+<!-- ====== MAP SECTION ====== -->
+<section class="map-section">
+  <h2 class="section-title">Find Sambalpur on Map</h2>
+  <p class="section-subtitle">
+    Locate Sambalpur, Odisha, India on Google Maps.
+  </p>
+  <div class="map-container">
+    <iframe src="https://maps.google.com/maps?q=Sambalpur,Odisha,India&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
 
